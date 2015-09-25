@@ -1,6 +1,10 @@
-;; Haskell Unicode helper functions
+;;; -*- mode: Emacs Lisp; coding: utf-8 -*-
+;;; haskell-input-method --- Haskell Unicode input method for Emacs
+
+;;; License:
 ;;
-;; Copyright 2010—2011 Roel van Dijk
+;; Copyright 2010—2011 Roel van Dijk    <vandijk.roel@gmail.com>
+;; Copyright      2015 Remy Goldschmidt <taktoa@gmail.com>
 ;;
 ;; All rights reserved.
 ;;
@@ -34,7 +38,13 @@
 ;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 ;; OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(provide 'haskell-unicode-input-method)
+;;; Commentary:
+;;
+;; This library provides an input mode for writing Haskell with Unicode syntax
+;; or Unicode names.
+
+;;; Code:
+
 (require 'quail)
 
 (quail-define-package
@@ -192,38 +202,38 @@ packages (base-unicode-symbols and containers-unicode-symbols).
  ;; ("<==|"             ["⟽"])
 
  ("~>"               ["⇝"])
- ;; ("~~>"              ["⟿"])
+ ("~~>"              ["⟿"])
  ("<~"               ["⇜"])
- ;; ("<~~"              ["⬳"])
+ ("<~~"              ["⬳"])
 
- ;; (">->"              ["↣"])
- ;; ("<-<"              ["↢"])
- ;; ("->>"              ["↠"])
- ;; ("<<-"              ["↞"])
+ (">->"              ["↣"])
+ ("<-<"              ["↢"])
+ ("->>"              ["↠"])
+ ("<<-"              ["↞"])
 
- ;; (">->>"             ["⤖"])
- ;; ("<<-<"             ["⬻"])
+ (">->>"             ["⤖"])
+ ("<<-<"             ["⬻"])
 
- ;; ("<|-"              ["⇽"])
- ;; ("-|>"              ["⇾"])
- ;; ("<|-|>"            ["⇿"])
+ ("<|-"              ["⇽"])
+ ("-|>"              ["⇾"])
+ ("<|-|>"            ["⇿"])
 
- ;; ("<-/-"             ["↚"])
- ;; ("-/->"             ["↛"])
+ ("<-/-"             ["↚"])
+ ("-/->"             ["↛"])
 
- ;; ("<-|-"             ["⇷"])
- ;; ("-|->"             ["⇸"])
- ;; ("<-|->"            ["⇹"])
+ ("<-|-"             ["⇷"])
+ ("-|->"             ["⇸"])
+ ("<-|->"            ["⇹"])
 
- ;; ("<-||-"            ["⇺"])
- ;; ("-||->"            ["⇻"])
- ;; ("<-||->"           ["⇼"])
+ ("<-||-"            ["⇺"])
+ ("-||->"            ["⇻"])
+ ("<-||->"           ["⇼"])
 
- ;; ("-o->"             ["⇴"])
- ;; ("<-o-"             ["⬰"])
+ ("-o->"             ["⇴"])
+ ("<-o-"             ["⬰"])
 
  ;; Boolean operators
- ;; ("not"              ["¬"])
+ ("not"              ["¬"])
  ("&&"               ["∧"])
  ("||"               ["∨"])
 
@@ -236,14 +246,14 @@ packages (base-unicode-symbols and containers-unicode-symbols).
  ("/>"               ["≯"])
 
  ;; Arithmetic
- ;; (" / "              [" ÷ "])
+ (" / "              [" ÷ "])
  (" * "              [" ⋅ "])
 
  ;; Containers / Collections
- ;; ("++"               ["⧺"])
- ;; ("+++"              ["⧻"])
- ;; ("|||"              ["⫴"])
- ;; ("empty"            ["∅"])
+ ("++"               ["⧺"])
+ ("+++"              ["⧻"])
+ ("|||"              ["⫴"])
+ ("empty"            ["∅"])
  ("elem"             ["∈"])
  ("notElem"          ["∉"])
  ("member"           ["∈"])
@@ -254,16 +264,16 @@ packages (base-unicode-symbols and containers-unicode-symbols).
  ("isProperSubsetOf" ["⊂"])
 
  ;; Other
- ;; ("<<"               ["≪"])
- ;; (">>"               ["≫"])
+ ("<<"               ["≪"])
+ (">>"               ["≫"])
  ("<<<"              ["⋘"])
  (">>>"              ["⋙"])
  ("<|"               ["⊲"])
  ("|>"               ["⊳"])
  ("><"               ["⋈"])
- ;; ("mempty"           ["∅"])
+ ("mempty"           ["∅"])
  ("mappend"          ["⊕"])
- ;; ("<*>"              ["⊛"])
+ ("<*>"              ["⊛"])
  (" . "              [" ∘ "])
  ("undefined"        ["⊥"])
  (":="               ["≔"])
@@ -271,10 +281,6 @@ packages (base-unicode-symbols and containers-unicode-symbols).
  ("=def"             ["≝"])
  ("=?"               ["≟"])
  ("..."              ["…"])
-
- ;; Braces
- ;; ("[|"               ["〚"])
- ;; ("|]"               ["〛"])
 
  ;; Numeric subscripts
  ("_0 "              ["₀"])
@@ -298,5 +304,7 @@ packages (base-unicode-symbols and containers-unicode-symbols).
  ("^6 "              ["⁶"])
  ("^7 "              ["⁷"])
  ("^8 "              ["⁸"])
- ("^9 "              ["⁹"])
-)
+ ("^9 "              ["⁹"]))
+
+(provide 'haskell-input-method)
+;;; haskell-input-method.el ends here
